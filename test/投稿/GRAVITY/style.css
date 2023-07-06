@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+body{
+  background-color: rgba(255, 251, 242, 1)
+}
+
+/* ----  ▼  ---- */
+.tweet-container {
+  display: flex; /* コンテナ内の要素を横に並べる */
+  align-items: center; /* 要素を中央揃えにする */
+  margin: 20px 0; /* 上下に余白を設ける */
+}
+
+.avatar {
+  border-radius: 50%; /* 縁取りを円形にする */
+  width: 48px; /* 横幅を固定する */
+  height: 48px; /* 高さを固定する */
+  object-fit: cover; /* 画像をコンテナサイズに調整する */
+  margin-right: 10px; /* 右側に余白を設ける */
+}
+
+.tweet-body {
+  display: flex; /* 子要素を横に並べる */
+  flex-direction: column; /* 子要素を縦に配置する */
+  color: #000; /* テキストの色を設定する */
+}
+
+.tweet-header {
+  display: flex; /* 子要素を横に並べる */
+  align-items: center; /* 要素を中央揃えにする */
+  font-size: 14px; /* 文字サイズを設定する */
+}
+
+.username {
+  color: rgb(0, 0, 0); /* ユーザー名の色を青色にする */
+  font-weight: bold; /* フォントの太さを変更する */
+  margin-right: 4px; /* 右側に余白を設ける */
+}
+
+.timestamp {
+  color: gray; /* ツイート日時の色をグレー色にする */
+}
+
+.tweet-text {
+  margin: 5px 0; /* 上下に余白を設ける */
+  font-size: 16px; /* 文字サイズを設定する */
+}
+
+.tweet-footer {
+  display: flex; /* 子要素を横に並べる */
+  align-items: center; /* 要素を中央揃えにする */
+  margin-top: 10px; /* 上部に余白を設ける */
+}
+
+.likes-count, .retweets-count {
+  font-size: 14px; /* 文字サイズを設定する */
+  margin-right: 20px; /* 右側に余白を設ける */
+}
+
+.icon {
+  width: 24px; /* 横幅を固定する */
+  height: 24px; /* 高さを固定する */
+  margin-right: 10px; /* 右側に余白を設ける */
+}
+
+.tweet-box {
+  border: solid 1px #fff4d7; /* 枠線のスタイル */
+  border-radius: 10px;   /* 角丸の半径 */
+  padding: 10px;         /* コンテンツと枠の余白 */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* 影の設定 */
+}
+
+

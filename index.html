@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>東京喫茶</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="openbtn1"><span></span><span></span><span></span></div>
+      <nav id="g-nav">
+        <div id="g-nav-list">
+          <!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
+          <ul>
+            <li><a href="#">トップ</a></li>
+            <li><a href="html/menu.html">メニュー</a></li>
+            <li><a href="html/shop.html">店舗情報</a></li>
+            <li><a href="html/board.html">掲示板</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="circle-bg"></div>
+    </header>
+
+    <main>
+      <div class="firstContents">
+        <h1 class="tokyo">東京喫茶</h1>
+        <img src="img/menu.png" alt="" class="firstImg" />
+      </div>
+
+      <div class="secondContents">
+        <h2>こんなお店</h2>
+        <p>
+          普通に食事を楽しむ人。宿題や会社の書類を作る人。<br />
+          この場所に訪れる理由は人それぞれ。<br />
+          東京喫茶は不思議な場所で、何だか落ち着く空間です。<br />
+          よろしければぜひお越しください。<br />
+          精一杯おもてなしさせて頂きます。
+        </p>
+        <div class="scrolldown1"></div>
+      </div>
+
+      <div class="threeContents">
+        <h2>おしながき</h2>
+        <div class="slider">
+          <img
+            src="img/slide_img1.png"
+            onclick="location.href='html/menu.html'"
+          />
+          <img
+            src="img/slide_img2.png"
+            onclick="location.href='html/menu.html'"
+          />
+          <img
+            src="img/slide_img3.png"
+            onclick="location.href='html/menu.html'"
+          />
+          <img
+            src="img/slide_img4.png"
+            onclick="location.href='html/menu.html'"
+          />
+          <img
+            src="img/slide_img5.png"
+            onclick="location.href='html/menu.html'"
+          />
+          <img
+            src="img/slide_img6.png"
+            onclick="location.href='html/menu.html'"
+          />
+          <img
+            src="img/slide_img7.png"
+            onclick="location.href='html/menu.html'"
+          />
+          <img
+            src="img/slide_img8.png"
+            onclick="location.href='html/menu.html'"
+          />
+          <img
+            src="img/slide_img9.png"
+            onclick="location.href='html/menu.html'"
+          />
+          <img
+            src="img/slide_img10.png"
+            onclick="location.href='html/menu.html'"
+          />
+        </div>
+        <p><span>▲</span><br />clieck</p>
+      </div>
+
+      <div class="fourContents">
+        <h2>店舗情報</h2>
+        <div id="shopInfo">
+          <ul class="info">
+            <li class="item">
+              <a>
+                <p class="date">住所</p>
+                <p class="title">
+                  〒158-0094<br />
+                  東京都世田谷区玉川3-17-1
+                </p>
+              </a>
+            </li>
+            <li class="item">
+              <a>
+                <p class="date">アクセス</p>
+                <p class="title">「二子玉川駅」徒歩4分</p>
+              </a>
+            </li>
+            <li class="item">
+              <a>
+                <p class="date">定休日</p>
+                <p class="title">玉川高島屋S・Cの休みに準じます。</p>
+              </a>
+            </li>
+            <li class="item">
+              <a>
+                <p class="date">クレジット</p>
+                <p class="title">可（VISA,JCB）</p>
+              </a>
+            </li>
+            <li class="item">
+              <a>
+                <p class="date">電子マネー</p>
+                <p class="title">可（交通系ICカード,PayPay）</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fiveContents">
+        <h2>掲示板</h2>
+        <div class="tweet">
+          <div class="tweet-content">
+            <div class="tweet-header"></div>
+            <img src="img/shop1.jpg" alt="投稿画像" class="tweetImg" />
+            <p class="tweet-text">
+              本日より、誕生日ギフトの予約受付が開始致しました！<br />5種類ものご用意がございますので、是非お越しください
+              !<br /><br />※在庫なくなり次第終了となります
+            </p>
+            <div class="tweet-footer"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p class="copyright">© 2023 Example Inc. All Rights Reserved.</p>
+      <ul class="md-flex">
+        <li><a href="#">トップ</a></li>
+        <li><a href="html/menu.html">メニュー</a></li>
+        <li><a href="html/board.html">掲示板</a></li>
+        <li><a href="html/shop.html">店舗情報</a></li>
+      </ul>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

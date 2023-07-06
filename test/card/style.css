@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+body{
+  background-color: rgba(255, 251, 242, 1);
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: 'Shippori Mincho', serif;
+}
+/* ----  ▼menu  ---- */
+
+h3{
+  font-size: 30px;
+  padding-left: 70px;
+}
+
+img{
+  margin-top:40px;
+  width: 270px;
+}
+
+.tax{
+  font-size: 15px;
+  padding-left: 75px;
+}
+
+.taxIncluded{
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* 中央揃えのために追加 */
+  margin: 0 auto; /* 左右の余白を自動に設定 */
+  max-width: 1200px; /* コンテナの最大幅を指定 */
+}
+
+.bread{
+  width: 400px;
+}

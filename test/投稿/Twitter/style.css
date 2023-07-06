@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+/* ----  ▼  ---- */
+.tweet {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #e6ecf0;
+  
+}
+
+.profile{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.tweet-content {
+  flex-grow: 1;
+}
+
+.tweet-header {
+  display: flex;
+  align-items: center;
+}
+
+.tweet-name {
+  margin: 0;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.tweet-username {
+  color: #657786;
+}
+
+.tweet-timestamp {
+  margin-left: auto;
+  color: #657786;
+}
+
+.tweetImg{
+  margin: 20px 0;
+  border-radius: 10%;
+}
+
+.tweet-text {
+  margin: 10px 0;
+}
+
+.tweet-footer {
+  display: flex;
+  align-items: center;
+  color: #657786;
+}
+
+.tweet-footer i {
+  margin-right: 10px;
+}

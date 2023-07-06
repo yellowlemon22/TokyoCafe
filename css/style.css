@@ -1,0 +1,523 @@
+@charset "utf-8";
+
+/*========= ▼共通 ===============*/
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: 'Shippori Mincho', serif;
+}
+
+body {
+  background-color: rgba(255, 251, 242, 1)
+}
+
+h1 {
+  color: rgba(90, 70, 32, 1);
+  text-align: center;
+  margin-top: 5vh;
+  /* 要素を上方向に画面の高さの 50% の位置に移動 */
+  font-size: 60px;
+}
+
+h2 {
+  color: rgba(90, 70, 32, 1);
+  text-align: center;
+  margin: 5vh 0;
+  /* 要素を上方向に画面の高さの 50% の位置に移動 */
+  font-size: 30px;
+  white-space: nowrap;
+}
+
+p {
+  color: rgba(90, 70, 32, 1);
+}
+
+/*========= ▼ハンバーガーメニュー ===============*/
+#g-nav.panelactive {
+  /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+/*丸の拡大*/
+.circle-bg {
+  position: fixed;
+  z-index: 3;
+  /*丸の形*/
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgb(248, 235, 204);
+  /*丸のスタート位置と形状*/
+  transform: scale(0);
+  /*scaleをはじめは0に*/
+  left: -50px;
+  top: -50px;
+  transition: all .6s;
+  /*0.6秒かけてアニメーション*/
+}
+
+.circle-bg.circleactive {
+  transform: scale(50);
+  /*クラスが付与されたらscaleを拡大*/
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav-list {
+  display: none;
+  /*はじめは表示なし*/
+  /*ナビの数が増えた場合縦スクロール*/
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#g-nav.panelactive #g-nav-list {
+  display: block;
+  /*クラスが付与されたら出現*/
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+  opacity: 0;
+  /*はじめは透過0*/
+  /*ナビゲーション天地中央揃え※レイアウトによって調整してください。不必要なら削除*/
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*背景が出現後にナビゲーションを表示*/
+#g-nav.panelactive ul {
+  opacity: 1;
+}
+
+/* 背景が出現後にナビゲーション li を表示※レイアウトによって調整してください。不必要なら削除*/
+#g-nav.panelactive ul li {
+  animation-name: gnaviAnime;
+  animation-duration: 1s;
+  animation-delay: .2s;
+  /*0.2 秒遅らせて出現*/
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes gnaviAnime {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/*リストのレイアウト設定*/
+#g-nav li {
+  text-align: center;
+  list-style: none;
+}
+
+#g-nav li a {
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  /* すべての文字を大文字に変換 */
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ----  ▼下線  ---- */
+
+#g-nav li a:after {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 80%;
+  height: 1px;
+  background-color: #3333338a;
+  transform: translate(-100%, 0);
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
+  content: "";
+}
+
+#g-nav li a:hover:after {
+  transform: translate(10%, 0);
+}
+
+
+/*ーーーーー ▼ボタンCSS ーーーーーー*/
+.openbtn1 {
+  position: fixed;
+  top: 45px;
+  left: 46px;
+  z-index: 9999;
+  /*ボタンを最前面に*/
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+/*×に変化*/
+.openbtn1 span {
+  display: inline-block;
+  transition: all .4s;
+  position: absolute;
+  left: 14px;
+  height: 1px;
+  /* 線の太さ */
+  background-color: #666;
+  width: 60%;
+}
+
+.openbtn1 span:nth-of-type(1) {
+  top: 15px;
+  animation: openbtn 12000ms infinite;
+}
+
+.openbtn1 span:nth-of-type(2) {
+  top: 25px;
+  animation: openbtn 8000ms infinite;
+}
+
+.openbtn1 span:nth-of-type(3) {
+  top: 35px;
+  animation: openbtn 10000ms infinite;
+}
+
+.openbtn1.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+
+.openbtn1.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.openbtn1.active span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
+/* btn Line Animation */
+@keyframes openbtn {
+  0%   {width: 30%;}
+  10%  {width: 60%;}
+  20%  {width: 20%;}
+  30%  {width: 60%;}
+  40%  {width: 20%;}
+  50%  {width: 40%;}
+  60%  {width: 20%;}
+  70%  {width: 50%;}
+  80%  {width: 10%;}
+  90%  {width: 60%;}
+  100% {width: 30%;}
+}
+
+/*========= ▼firstContents ===============*/
+.tokyo{
+  position: relative;
+  top: 380px;
+}
+
+.firstContents {
+  height: 100vh;
+  text-align: center;
+}
+
+.firstImg {
+  width: 700px;
+  animation:80s linear infinite rotation1;
+  padding-top: 10px;
+}
+
+@keyframes rotation1{
+  0%{ transform:rotate(0);}
+  100%{ transform:rotate(360deg); }
+}
+
+/*========= ▼secondContents ===============*/
+
+.secondContents {
+  position: relative;
+  height: 400px;
+}
+
+.secondContents p {
+  text-align: center;
+  line-height: -4px;
+}
+
+/* ----  ▼スクロールダウン  ---- */
+
+.scrolldown1 {
+  text-align: center;
+  /*全体の高さ*/
+  height: 50px;
+}
+
+/* 線の描写 */
+.scrolldown1::after {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  margin-top: 310px;
+  /*線の形状*/
+  width: 1px;
+  height: 30px;
+  background: #000000;
+  /*線の動き1.4秒かけて動く。永遠にループ*/
+  animation: pathmove 1.4s ease-in-out infinite;
+  opacity: 0;
+}
+
+/*高さ・位置・透過が変化して線が上から下に動く*/
+@keyframes pathmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+
+  30% {
+    height: 30px;
+    opacity: 1;
+  }
+
+  100% {
+    height: 0;
+    top: 50px;
+    opacity: 0;
+  }
+}
+
+/*========= ▼threeContents ===============*/
+.threeContents{
+  margin: 20px 0 100px;
+}
+
+.menu{
+  position: relative;
+  margin: 0 auto;
+}
+
+.threeContents p {
+  text-align: center;
+  padding-top: 120px;
+}
+
+.threeContents p span {
+  font-size: 1px;
+}
+/* ----  slider  ---- */
+.slider {
+  width: 300px;
+  position: relative;
+  margin: 0 auto;
+  height: 10rem;
+}
+
+.slider img {
+  width: 100%;
+  position: absolute;
+  animation: slider 3000ms infinite;
+}
+
+@keyframes slider {
+  0% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+/*========= ▼fourContents ===============*/
+#shopInfo {
+  display: flex;
+}
+
+.info{
+  list-style: none outside;
+  top: 150px;
+  margin: 0 auto;
+  padding: 0;
+  width: 40%;
+}
+.info .item a{
+  display: flex;
+  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #CCC;
+  padding: 20px 20px;
+  margin: 0;
+}
+.info .item .date{
+  margin: 0;
+  min-width: 120px;
+  font-size: 16px;
+  color: #999;
+  padding: 0 20px 0 0;
+}
+.info .item .title{
+  margin: 0;
+  width: 100%;
+}
+
+/*========= ▼fiveContents ===============*/
+
+.fiveContents{
+  height: 720px;
+}
+
+.tweet {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #d0d0d0;
+  text-align: center;
+}
+
+.tweet-content {
+  flex-grow: 1;
+}
+
+.tweet-header {
+  display: flex;
+  align-items: center;
+}
+
+.tweet-date {
+  margin: 30px auto;
+  font-weight: bold;
+  font-size: 30px;
+  color: rgba(90, 70, 32, 1);
+}
+
+.tweetImg{
+  margin: 20px 0;
+  border-radius: 10%;
+}
+
+.tweet-text {
+  margin: 10px 0 30px;
+  color: rgba(90, 70, 32, 1);
+}
+
+.tweet-footer {
+  display: flex;
+  align-items: center;
+  color: #657786;
+}
+
+.tweet-footer i {
+  margin-right: 10px;
+}
+
+/*========= ▼footer ===============*/
+.footer a {
+  color: #999;
+  text-decoration: none;/* テキストの装飾を消す */
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer {
+  margin-top: 50px;
+  font-size: 15px;
+  color: #999;
+}
+
+.footer a:hover {
+  color: #000;
+}
+
+.copyright{
+  margin-right: 5%;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    display: flex;
+  }
+
+  .md-flex {
+    display: flex;
+  }
+
+  .md-flex li + li {
+    margin-left: 16px;
+  }
+}
+
+/*========= ▼スマホ画面 ===============*/
+
+@media screen and (max-width: 767px){
+
+  /* ▼firstContents  */
+  h1{
+    font-size: 40px;
+  }
+
+  .tokyo{
+    top: 0px;
+  }
+
+  .firstContents {
+    height: 400px;
+    text-align: center;
+  }
+  
+  .firstImg {
+    width: 300px;
+    animation:80s linear infinite rotation1;
+    padding-top: 40px;
+  }
+  
+  @keyframes rotation1{
+    0%{ transform:rotate(0);}
+    100%{ transform:rotate(360deg); }
+  }
+  
+
+  /* fourContents */
+  .info{
+    min-width: 350px;
+  }
+  .info .item a{
+    flex-wrap: wrap;
+  }
+  .info .item .date{
+    min-width: 150px;
+  }
+  .info .item .tokyo{
+    margin-top: 10px;
+  }
+  }
